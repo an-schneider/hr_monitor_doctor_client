@@ -30,6 +30,13 @@ class FetchData extends React.Component {
         })
     }
 
+    clearData = () => {
+        this.setState({"HR":[]})
+        this.setState({"Times":[]})
+        this.setState({"nameTextField":[]})
+    }
+
+
     onNameTextFieldChange = (event) => {
         // Update the nameTextField state whenever the text field is changed or perturbed in any way:
         this.setState({"nameTextField": event.target.value});
@@ -37,18 +44,28 @@ class FetchData extends React.Component {
 
     render() {
         return (
-            <div>
+            <div style={{'color':"blue"}}>
+                Enter Patient's Email: <span>
                 <TextField
                     value={this.state.nameTextField}
-                    onChange={this.onNameTextFieldChange}/>
+                    onChange={this.onNameTextFieldChange}/> </span>
                 <Button variant="raised" onClick={this.getData}>
                     Get Data
                 </Button>
-                <div>
-                Heart Rates (BPM): {this.state.HR}
+                <Button  variant="raised" onClick={this.clearData}>
+                    Clear
+                </Button>
+                <div style={{'color':"black"}}>
+                     Heart Rates (BPM):
+                    <div style={{'color':"red"}}>
+                        {this.state.HR}
+                    </div>
                 </div>
-                <div>
-                Times: {this.state.Times}
+                <div style={{'color':"black"}}>
+                    Times:
+                </div>
+                <div style={{'color':"red"}}>
+                    {this.state.Times}
                 </div>
             </div>
         )
