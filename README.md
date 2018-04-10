@@ -9,3 +9,6 @@ First, log into your VCM then spin up the database using the command "sudo mongo
 
 ### Start Client Application
 In a new terminal, run "npm run start" in the "hrm-client" folder. This will start up the application. Now simply type the patient's email and select "GET DATA" to generate a list of patient emails. 
+
+### Notes
+The server has recently been experiencing issues. You have to click "GET DATA" multiple times before the data is actually fetched. 
